@@ -8,6 +8,6 @@ public class CookModels
     public decimal Tempo { get; set; }
     public int Potencia { get; set; }
     public string stringAquecimento { get; set; }
-    public string Instruções { get; set; }
+    public string instrucoes { get; set; }
     public bool Alteravel { get; set; }
 }

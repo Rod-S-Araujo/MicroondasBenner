@@ -14,5 +14,5 @@ public class CreateCookModelDTO
     public int Potencia { get; set; }
     public string stringAquecimento { get; set; }
     [Required]
-    public string Instruções { get; set; }
+    public string instrucoes { get; set; }
 }

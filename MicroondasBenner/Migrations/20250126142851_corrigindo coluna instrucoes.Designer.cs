@@ -2,6 +2,7 @@
 using MicroondasBenner.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MicroondasBenner.Migrations
 {
     [DbContext(typeof(MicrowaveDbContext))]
-    partial class MicrowaveDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250126142851_corrigindo coluna instrucoes")]
+    partial class corrigindocolunainstrucoes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
