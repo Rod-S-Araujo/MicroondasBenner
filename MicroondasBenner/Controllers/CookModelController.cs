@@ -37,4 +37,64 @@ public class CookModelController : ControllerBase
         }
 
     }
+
+    [HttpPatch]
+    public async Task<IActionResult> UpdateCookModel([FromBody] CreateCookModelDTO updateCookModelDTO)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = await _services.UpdateCookModel(updateCookModelDTO);
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetAllCookModels()
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = await _services.GetAllCookModel();
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeleteCookModel(string name)
+    {
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+
+        try
+        {
+            var result = await _services.DeleteCookModel(name);
+
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(new { ex.Message });
+        }
+    }
 }

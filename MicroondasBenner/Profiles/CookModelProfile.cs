@@ -9,5 +9,6 @@ public class CookModelProfile: Profile
     public CookModelProfile() 
     {
         CreateMap<CreateCookModelDTO, CookModels>();
+        CreateMap<CookModels, ReadCookModelDTO>();
     }
 }
