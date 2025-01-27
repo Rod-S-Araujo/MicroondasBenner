@@ -9,7 +9,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["MicroondasBenner/MicroondasBenner.csproj", "MicroondasBenner/"]
+COPY ["MicroondasBenner.csproj", "MicroondasBenner/"]
 RUN dotnet restore "./MicroondasBenner/MicroondasBenner.csproj"
 COPY . .
 WORKDIR "/src/MicroondasBenner"
